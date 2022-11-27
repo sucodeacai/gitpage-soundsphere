@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properities -->
+    <title>SoundSphere </title>
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/container.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/header.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/image.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/menu.css">
+
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/dropdown.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/button.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/list.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/popup.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/simpleTheme.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/components/loader.min.css">
+
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+        
+        .masthead.segment {
+            min-height: 700px;
+            padding: 1em 0em;
+        }
+        
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
+        
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+        }
+        
+        .masthead h1.ui.header {
+            font-size: 2em;
+            font-weight: normal;
+        }
+        
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+        
+        .ui.vertical.stripe {
+            padding: 8em 0em;
+        }
+        
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+        
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+        
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+        
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+        
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+        
+        .footer.segment {
+            padding: 5em 0em;
+        }
+        
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+        
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 0.5em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+    </style>
+
+    <script src="js/semantic/jquery-3.1.1.min.js"></script>
+    <script src="js/semantic/semantic.min.js"></script>
+    <script>
+        function goSoundSphere() {
+            console.log('call');
+            window.location.assign("./soundsphere.html")
+        }
+
+        function goLeitor() {
+            console.log('call');
+            window.location.assign("./leitor.html")
+        }
+
+        function goToe() {
+            console.log('call');
+            window.location.assign("./toe.html")
+        }
+
+        $(document)
+            .ready(function() {
+                $('.item')
+                    .popup();
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            });
+    </script>
+</head>
+
+<body>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-71193140-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics -->
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <a class="active item">Versões Beta</a>
+        <a href="../soundsphere.html" class="item">Versão estavel</a>
+
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical masthead center aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="active item">Versões Beta</a>
+                    <a href="soundsphere.html" class="item">Versão estavel</a>
+
+
+                </div>
+            </div>
+
+            <div class="ui text container">
+                <h1 class="ui inverted header">
+                    Biblioteca de versões
+                </h1>
+                <a href="1.3/index.html" lass="item">20181130 - SoundSphere 1.3 - Versão do Site Estável</a></br>
+                <a data-content="Leitor JSON, Indicador de Volume." href="20181014/index.html" class="item">20181014 - Beta - SoundSphere 1.4</a></br>
+                <a href="20181030/index.html" data-content="Correção de bugs." class="item">20181030 - Beta - SoundSphere 1.4</a></br>
+                <a href="20181127/index.html" data-content="Implementação TOE." class="item">20181127 - Beta - SoundSphere 1.4 </a></br>
+                <a href="20181204/index.html" data-content="Alterar posição do Tracker enquanto pausado." class="item">20181204 - Beta - SoundSphere 1.4 </a></br>
+                <a href="20181211/index.html" data-content="Alteração do movimento do painel." class="item">20181211 - Beta - SoundSphere 1.4 </a></br>
+                <a data-content="Melhoria no movimento do painel. Obs: Limite de 10 min de composição" href="20181218/index.html" class="item">20181218 - Beta - SoundSphere 1.4 </a></br>
+                <a data-content="Mudança na GRID de tempo em relação aos Segundos e as horas. Obs: Remoção do limite de 10 min composição" href="20181219/index.html" class="item">20181219 - Beta - SoundSphere 1.4 </a></br>
+                <a data-content="Teste de indicadores de Descritor e ajuste das linhas do painel." href="20190402/index.html" class="item">20190402 - Beta - SoundSphere 1.4.1 </a></br>
+                <a data-content="Teste de indicadores - Gradiente v1" href="20190409/index.html" class="item">20190409 - Beta - SoundSphere 1.4.1 </a></br>
+                <a data-content="Teste de indicadores - Gradiente v2" href="20190410/index.html" class="item">20190410 - Beta - SoundSphere 1.4.1 </a></br>
+                <a data-content="Gradiente v2 - Mudança das cores das amostras e Criação do campo JSONFileStructureVersion" href="20190411/index.html" class="item">20190411 - Beta - SoundSphere 1.4.2 </a></br>
+                <a data-content="Mudanças nas opções de Volume" href="20190412/index.html" class="item">20190412 - Beta - SoundSphere 1.4.3 </a></br>
+                <a data-content="Correção do título; Pause ativa o Tracker; Download e Play só geram um novo Buffer se existir alteração. " href="20190416/index.html" class="item">20190416 - Beta - SoundSphere 1.4.4 </a></br>
+                <a data-content="Consistência entre as cores ao continuar seção; Despausar não reseta o movimento do painel. " href="20190423/index.html" class="item">20190423 - Beta - SoundSphere 1.4.5 </a></br>
+                <a data-content="Indicação do operador semântico-timbrístico aplicado no evento usando abreviação tipo aeroporto, posicionamento vertical no início do evento; Correção do BUG que permitia ativação do Play/Pause quando se tem apenas itens excluidos; Correção do BUG itens excluidos continuavam a serem executados na reprodução. "
+                    href="20190430/index.html" class="item">20190430 - Beta - SoundSphere 1.4.6 </a></br>
+                <a data-content="Correção do BUG que alterava a posição da indicação do descritor de acordo com volume; Mudança visual na indicação do descritor no painel; Implementação da funcionalidade para permitir dar um título a composição; Implementação do log dos itens do painel (histórico); Mudança da versão de leitura e gravação dos arquivos JSON.  
+  " href="20190507/index.html" class="item">20190507 - Beta - SoundSphere 1.4.7 </a></br>
+                <a data-content="Inclusão de informações no leitor JSON; Correção do bug que itens excluidos continuavam a colidir ao alterar itens do painel; Mudança de comportamento relativo a colisões de itens no painel;Tempo máximo redudizo temporariamente para testar mensagens de erro.
+  " href="20190510/index.html" class="item">20190510 - Beta - SoundSphere 1.4.8 </a></br>
+                <a data-content="Correção do BUG que alterava automaticamente filtros do mesmo tipo; Mudança para que todos os Descritores sejam carregados com 40 filtros Peaking com Frequencias diferentes e Q 4.13." href="20190517/index.html" class="item">20190517 - Beta - SoundSphere 1.4.9 </a></br>
+                <a data-content="Atualização das configurações dos descritores semanticos." href="20190604/index.html" class="item">20190604- Beta - SoundSphere 1.4.10 </a></br>
+                <a data-content="Alteração para permitir leitura da cor em formato hexadecimal no nome dos arquivos WAV para definir a cor dos itens." href="20190624/index.html" class="item">20190624- Beta - SoundSphere 1.4.11 </a></br>
+                <a data-content="Alteração para exibir mensagem de erro caso código de cor no nome seja inválido e tempo total da composição para 60 minutos" href="20190702/index.html" class="item">20190702- Beta - SoundSphere 1.4.12 </a></br>
+                <a data-content="Testes do menu em camadas, vinculacao do gradiente ao valume da amostra do painel e criacao da opcao de cancelar o downlaod" href="20190907/index.html" class="item">20190907- Beta - SoundSphere 1.4.13 </a></br>
+                <a data-content="Correção do error do botão download JSON" href="20190918/index.html" class="item">20190918- Beta - SoundSphere 1.4.14 </a></br>
+                <a data-content="Implementado padrão de cor hsl no gradiente, exeplo de um outro tipo de gradiente, onde o gradiente se incia do meio para as bordas" href="20191001/index.html" class="item">20191001- Beta - SoundSphere 1.4.15 </a></br>
+                <a data-content="Volta para a versão de gradiente anterior, novo algoritimo para determinar  HSL, centralização do menu, adição de margem inferior no painel de amostras" href="20191008/index.html" class="item">20191008- Beta - SoundSphere 1.4.16 </a></br>
+                <a data-content="Correção bug comando de voz, Correção do BUG que ao clicar em recomeçar se perdia o histórico, correção do reset vertical, inclusão do nome do autor." href="20191022/index.html" class="item">20191022- Beta - SoundSphere 1.4.17 </a></br>
+                <a data-content="Correção da mensagem comando de voz quando o microfone está desabilitado." href="20191024/index.html" class="item">20191024- Beta - SoundSphere 1.4.18 </a></br>
+                <a data-content="Mensagem com o tempo de inserção do item de mixage, exibição do tempo de acordo com a posição do cursor no painel e  uma mudança do calculo da posição do mouse em relação ao painel (offSet)." href="20200415/index.html" class="item">20200415- Beta - SoundSphere 1.4.19 </a></br>
+                <a data-content="Alteração da velocidade de movimento do painel, exibição do tempo relativo ao curso no final do painel e posição de inserção de item." href="20200530/index.html" class="item">20200530 - Beta - SoundSphere 1.4.20 </a></br>
+                <a data-content="Implementação da passagem do parâmetro pixel por segundo via url, correção de inserção de item na trilha 79 e 80, melhorias na exibição de tempo relativo ao cursor. " href="20200531/index.html" class="item">20200531 - Beta - SoundSphere 1.4.21 </a></br>
+                <a data-content="BUG: alterar um item de mixagem, alterava também as propriedades do evento de log de inserção (corrigido), Aumento da largura do container, implementação de ícones descritivos e alteração da versão de exportação JSON." href="20200611/index.html"
+                    class="item">20200611 - Beta - SoundSphere 1.4.22 </a></br>
+                <a data-content="Menu de icones descritivos apenás com ícones, mudança no mecanismo de inserção de ícone descritivo no painel e amostras de áudio agrupadas em um menu horizontal." href="202006112/index.html" class="item">20200611 - Beta - SoundSphere 1.4.23 </a></br>
+                <a data-content="BUGs: erro ao continuar a partir e um arquivo JSON no SoundSphere e erro ao exibir ícone descritivo no leitor JSON (corrigidos), implementação da lista de amostras disponíveis com barra de rolagem." href="20200613/index.html" class="item">20200613 - Beta - SoundSphere 1.4.24 </a></br>
+                <a data-content="BUGs: Menu principal: botão play não aparece e Mensagem da amostra que está sendo executada não aparecendo (corrigidos); Redesenhar painel ao inserir um ícone descritivo; Removido título das amostras de aúdio e inclusão de uma descrição através de um tooltip;  No painel sempre inserir no local do clique, volta do comportamento de mover a visualização caso exista colisão e exibição do tempo no curso não colide mais com a grade de tempo; Alteração no tamanho do conteúdo da página para ficar mais harmônico com o novo tamanho do menu; Itens descritivos saiu do dropdown para ser um menu independente; Opção de exclusão no menu principal."
+                    href="202006132/index.html" class="item">20200613 - Beta - SoundSphere 1.4.25 </a></br>
+                <a data-content=" Tooltip no menu principal, alterações de algumas mensagens e alternância entre menus." href="20200617/index.html" class="item">20200617 - Beta - SoundSphere 1.4.26 </a></br>
+                <a data-content="Ajuste de comportamento do deslocamento do painel ao mudar de menus; mudança do cursor no painel na situação de excluir  e editar; Alteração do tempo do painel para 60 minutos." href="20200618/index.html" class="item">20200618 - Beta - SoundSphere 1.4.27 </a></br>
+                <a data-content="Alteração do comportamento do comando de reprodução em relação a posição do painel." href="20200621/index.html" class="item">20200621 - Beta - SoundSphere 1.4.28 </a></br>
+                <a data-content="Ajuste ao ativar e desativar o excluir, mudança na função de parar a reprodução de uma amostra de áudio no álbum e alteração dos ícones." href="20200622/index.html" class="item">20200622 - Beta - SoundSphere 1.4.29 </a></br>
+                <a data-content="Versão estável." href="20200623/index.html" class="item">20200623 - Beta - SoundSphere 1.5 </a></br>
+                <a data-content="Correção do bug de ao pausar não desativar o excluir." href="20200811/index.html" class="item">20200811 - Beta - SoundSphere 1.5.1 </a></br>
+                <a data-content="Ao continuar uma mixagem agora só é exigido os arquivos WAV que tenham algum Item de Mixagem no painel. Logo, os arquivos nunca utilizados ou que tenham sido inseridos e posteriormente todos os seus Itens de mixagem removidos não são mais exigidos. No leitor JSON em Dados gerais:  foi alterado o campo 'Quantidade de amostras disponíveis' para 'Quantidade de Amostras Carregadas em Todas as sessões’; Removido o campo 'Quantidade de Amostras Diferentes Utilizadas' e incluído os campos 'Quantidade de Amostras Diferentes Utilizadas contando excluídas' e ‘Quantidade de Amostras Diferentes na mixagem final' ."
+                    href="20210630/index.html" class="item">20210630 - Beta - SoundSphere 1.5.2 </a></br>
+                <a data-content="Correção do BUG que não exibia os ícones das amostras de audios"
+                href="20210927/index.html" class="item">20210709 - Beta - SoundSphere 1.5.3 </a></br>
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

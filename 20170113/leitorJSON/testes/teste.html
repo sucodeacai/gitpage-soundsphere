@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="modalFiltros" class="ui modal">
+        <div class="header">Opções Filtros:</div>
+        <div class="content" id="corpoModal">
+            <form onsubmit="return false;" class="ui form" novalidate id="formOptions">
+                <div class="ui error message"></div>
+                <div class="ui form">
+                    <div id="filtro1">
+                        <div class="ui  header">Low pass
+                            <div class="ui buttons">
+                                <button onclick="changePosition()" class="ui positive button">
+                                    <i class="angle up icon"></i>
+                                </button>
+                                <div class="or" data-text="ou"></div>
+                                <button class="ui  button">
+                                    <i class="angle down icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Frequencia</label>
+                                <input id="frequencyLowPass" type="number" min="1" max="24000" />
+                            </div>
+                            <div class="field">
+                                <label>Q (Largura de Banda)</label>
+                                <input id="QLowPass" type="number" min="1" max="24000" />
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                    </div>
+
+                    <div id="filtro2">
+                        <div class="ui  header">Hight pass
+                            <div class="ui buttons">
+                                <button onclick="changePosition()" class="ui positive button">
+                                    <i class="angle up icon"></i>
+                                </button>
+                                <div class="or" data-text="ou"></div>
+                                <button class="ui  button">
+                                    <i class="angle down icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Frequencia</label>
+                                <input id="frequencyHighPass" type="number" min="1" max="24000" />
+                            </div>
+                            <div class="field">
+                                <label>Q (Largura de Banda)</label>
+                                <input id="QHighPass" type="number" min="1" max="24000" />
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <div id="playAudioOptions" class="ui blue right  icon button">
+                <i id="iconPlayAudioOtions" class="play icon"></i>
+            </div>
+            <div onclick="controlPainel.removeItemMix()" class="ui negative right labeled icon button">
+                Delete
+                <i class="trash icon"></i>
+            </div>
+            <div onclick="controlPainel.discartOptions()" class="ui neutral right labeled icon button">Cancel</div>
+            <div onclick="controlPainel.saveOptions()" class="ui positive right labeled icon button">Ok</div>
+        </div>
+    </div>
+</body>
+
+</html>

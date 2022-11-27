@@ -1,0 +1,140 @@
+/*******************************
+Global
+*******************************/
+
+/*--------------
+simpleTheme
+---------------*/
+
+#sink {
+   
+    background-image: url('../img/fundo.png');
+
+   background-color: #cccccc;
+}
+
+#sink .simpleTheme.container {
+       background-color: #FFFFFF;
+   width: 1300px;
+   border: 1px solid #DDDDDD;
+   padding: 0 10px;
+   margin: 0px auto;
+   box-shadow: 0 0 .25em #CCC;
+   moz-box-shadow: 0 0 .25em #CCC; /* Implementação Mozilla */
+   webkit-box-shadow: 0 0 .25em #CCC; /* Implementação para browsers que renderizam via webkit */
+   behavior: url(PIE.htc); /* Comportamento adicionado para renderização das propriedades acima no IE 7 e IE 8 */
+
+}
+/* Fim css Site */
+
+
+#sink .simpleTheme h4 {
+   font-size: 1.5em;
+   margin: 2em 0em 1em;
+}
+#sink .simpleTheme.container .button.simpleTheme > .buttons,
+#sink .simpleTheme.container .button.simpleTheme > .button,
+#sink .simpleTheme.container .button.simpleTheme > .segment > .button {
+   margin-bottom: 0.5em;
+}
+#sink .simpleTheme.container h4:first-child {
+   font-weight: bold !important;
+   margin: 0em 0em 1em !important;
+}
+#sink .simpleTheme.container .example:first-child {
+   margin-top: 0;
+   padding-top: 0;
+}
+#sink .simpleTheme.container .segment.example {
+   z-index: 1;
+}
+#sink .simpleTheme.container .ui.label:not(.empty) {
+   margin-bottom: 1em;
+}
+#sink .simpleTheme.container .segment .ui.label {
+   margin-bottom: 0em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Classes utilizadas pelo Modal Filter para fazer o movimento de subir e descer */
+.subir {
+    z-index: 1000000;
+    position: relative;
+    animation: animationSubir .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes animationSubir {
+    100% {
+        transform: translateY(-110%);
+        background-color:white;
+    }
+}
+
+.descer {
+    z-index: 1000000;
+    position: relative;
+    animation: animationDescer .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes animationDescer {
+    100% {
+        transform: translateY(110%);
+        background-color:white;
+    }
+}
+.desativaFilter{
+    background: #cccccc;
+}
+/* fim */
+/* codigo usado para exibir mensagens */
+
+#mensagens {
+    position: absolute;
+    margin: 130px 20px;
+    font-family: inherit;
+    z-index: 30000000000000000000;
+}
+
+.modalClass {
+    background: wheat;
+    width: 200px;
+    padding: 20px;
+    display: block;
+    margin-bottom: 10px;
+    animation-name: aparecer;
+    animation-duration: 1s;
+}
+
+.remover {
+    animation: desaparecer .4s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes desaparecer {
+    50% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+/* fim */
